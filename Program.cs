@@ -15,7 +15,7 @@ namespace ConsoleCalculator
 					var x = GetNumber(1);
 					var y = GetNumber(2);
 
-					Console.WriteLine("Пожалуйста, выберите команду: +, -, *, /, max, min");
+					Console.WriteLine("Пожалуйста, выберите команду: +, -, *, /, max, min, mean");
 					string cmd = Console.ReadLine();
 
 					double result = GetResult(x, y, cmd);
@@ -52,6 +52,7 @@ namespace ConsoleCalculator
 				case "*": return x * y;
 				case "max": return Max(x, y);
 				case "min": return Min(x, y);
+				case "mean": return Mean(x, y);
 		    default: throw new Exception("Unknown command");
 			}
 		}
@@ -80,6 +81,7 @@ namespace ConsoleCalculator
 		}
 		public static double Max(double a, double b) => a > b ? a : b;
 		public static double Min(double a, double b) => a > b ? b : a;
+		public static double Mean(double a, double b) => (a + b) / 2;
 
 	}
 }
